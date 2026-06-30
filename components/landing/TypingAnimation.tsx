@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const messages = [
   "Hello.",
-  "I'm Dextra.",
+  "I'm Dexter.",
   "Your AI Right Hand.",
 ];
 
