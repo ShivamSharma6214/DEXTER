@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { Github, Twitter, MessageCircle, Heart } from "lucide-react";
 
+const githubRepoUrl = "https://github.com/sharmashivam6214-cmd/DEXTRA.git";
+
 const footerLinks = {
   Product: [
     { label: "Features", href: "#features" },
@@ -10,6 +12,7 @@ const footerLinks = {
     { label: "Join Alpha", href: "#alpha" },
   ],
   Community: [
+    { label: "Source Code", href: githubRepoUrl },
     { label: "Discord", href: "#" },
     { label: "Twitter", href: "#" },
     { label: "Feedback", href: "mailto:hello@dextra.ai" },
@@ -44,7 +47,10 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="https://github.com/dextra-ai"
+                href={githubRepoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Dextra GitHub repository"
                 className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-white hover:border-white/20 transition-all duration-300"
               >
                 <Github className="w-4 h-4" />
@@ -75,6 +81,8 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="text-sm text-white/40 hover:text-white/80 transition-colors duration-300"
                     >
                       {link.label}

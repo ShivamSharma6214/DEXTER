@@ -2,7 +2,9 @@
 
 import { useRef } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
-import { FlaskConical, Telescope, ArrowUpRight, MessageSquare, Code, Lightbulb } from "lucide-react";
+import { FlaskConical, Telescope, ArrowUpRight, MessageSquare, Code, Lightbulb, Github } from "lucide-react";
+
+const githubRepoUrl = "https://github.com/sharmashivam6214-cmd/DEXTRA.git";
 
 function MagneticCard({
   children,
@@ -156,11 +158,13 @@ export default function BuiltInPublic() {
               <ArrowUpRight className="w-3 h-3 text-white/40" />
             </a>
             <a
-              href="#"
+              href={githubRepoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/[0.02] text-white font-medium text-sm hover:bg-white/5 hover:border-white/20 transition-all duration-300"
             >
-              <Telescope className="w-4 h-4" />
-              Join the Discord
+              <Github className="w-4 h-4" />
+              View GitHub
               <ArrowUpRight className="w-3 h-3 text-white/40" />
             </a>
           </div>

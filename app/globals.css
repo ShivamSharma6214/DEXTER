@@ -58,8 +58,41 @@
   }
 
   .gradient-mesh {
-    background: radial-gradient(ellipse at 50% 0%, rgba(79, 140, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 50%, rgba(79, 140, 255, 0.03) 0%, transparent 40%);
+    background:
+      radial-gradient(
+        ellipse 280% 220% at 50% -5%,
+        rgba(79, 140, 255, 0.08) 0%,
+        rgba(79, 140, 255, 0.055) 12%,
+        rgba(79, 140, 255, 0.028) 28%,
+        rgba(79, 140, 255, 0.01) 45%,
+        rgba(79, 140, 255, 0.003) 62%,
+        rgba(79, 140, 255, 0.0008) 75%,
+        transparent 92%
+      ),
+      radial-gradient(
+        ellipse 200% 180% at 18% 50%,
+        rgba(79, 140, 255, 0.03) 0%,
+        rgba(79, 140, 255, 0.018) 18%,
+        rgba(79, 140, 255, 0.007) 35%,
+        rgba(79, 140, 255, 0.0025) 52%,
+        rgba(79, 140, 255, 0.0008) 68%,
+        transparent 88%
+      ),
+      radial-gradient(
+        ellipse 200% 180% at 82% 50%,
+        rgba(79, 140, 255, 0.03) 0%,
+        rgba(79, 140, 255, 0.018) 18%,
+        rgba(79, 140, 255, 0.007) 35%,
+        rgba(79, 140, 255, 0.0025) 52%,
+        rgba(79, 140, 255, 0.0008) 68%,
+        transparent 88%
+      );
+  }
+
+  .hero-gradient-mesh {
+    filter: blur(80px);
+    transform: scale(1.12);
+    will-change: transform;
   }
 
   .noise-bg {

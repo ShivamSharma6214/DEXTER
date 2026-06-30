@@ -2,18 +2,16 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { ArrowRight, Copy, Search, Repeat, AppWindow } from "lucide-react";
+import { Copy, Search, Repeat, AppWindow } from "lucide-react";
 
 function WorkflowStep({
   icon: Icon,
   label,
   delay,
-  isLast,
 }: {
   icon: React.ElementType;
   label: string;
   delay: number;
-  isLast: boolean;
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -30,14 +28,6 @@ function WorkflowStep({
         <Icon className="w-6 h-6 text-white/50" />
       </div>
       <span className="text-sm text-white/40 text-center max-w-[100px]">{label}</span>
-      {!isLast && (
-        <motion.div
-          initial={{ width: 0 }}
-          animate={isInView ? { width: 60 } : {}}
-          transition={{ duration: 0.8, delay: delay + 0.3, ease: "easeOut" }}
-          className="hidden sm:block absolute top-8 -right-[72px] h-px bg-white/10"
-        />
-      )}
     </motion.div>
   );
 }
@@ -82,7 +72,6 @@ export default function ProblemSection() {
     offset: ["start end", "end start"],
   });
 
-  const lineWidth = useTransform(scrollYProgress, [0.1, 0.4], ["0%", "100%"]);
   const contentY = useTransform(scrollYProgress, [0, 0.5], [100, 0]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
 
@@ -143,20 +132,11 @@ export default function ProblemSection() {
             <p className="text-sm text-white/30 uppercase tracking-widest mb-4">The Broken Workflow</p>
           </motion.div>
 
-          <div className="relative flex flex-wrap items-center justify-center gap-8 sm:gap-4">
-            {/* Progress line */}
-            <motion.div
-              style={{ width: lineWidth }}
-              className="absolute top-8 left-0 h-px bg-[#4F8CFF]/20 hidden sm:block"
-            />
-
-            <WorkflowStep icon={AppWindow} label="Switch Apps" delay={0} isLast={false} />
-            <ArrowRight className="hidden sm:block text-white/10 w-5 h-5" />
-            <WorkflowStep icon={Copy} label="Copy Data" delay={0.15} isLast={false} />
-            <ArrowRight className="hidden sm:block text-white/10 w-5 h-5" />
-            <WorkflowStep icon={Search} label="Search Menus" delay={0.3} isLast={false} />
-            <ArrowRight className="hidden sm:block text-white/10 w-5 h-5" />
-            <WorkflowStep icon={Repeat} label="Repeat Tasks" delay={0.45} isLast={true} />
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 isolate">
+            <WorkflowStep icon={AppWindow} label="Switch Apps" delay={0} />
+            <WorkflowStep icon={Copy} label="Copy Data" delay={0.15} />
+            <WorkflowStep icon={Search} label="Search Menus" delay={0.3} />
+            <WorkflowStep icon={Repeat} label="Repeat Tasks" delay={0.45} />
           </div>
         </div>
 

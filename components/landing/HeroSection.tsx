@@ -39,9 +39,6 @@ function MagneticButton({ children, className }: { children: React.ReactNode; cl
 }
 
 function NeuralNetwork({ visible }: { visible: boolean }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
   const nodes = [
     { x: 15, y: 20 }, { x: 35, y: 15 }, { x: 65, y: 18 }, { x: 85, y: 25 },
     { x: 20, y: 45 }, { x: 50, y: 40 }, { x: 80, y: 45 },
@@ -58,19 +55,11 @@ function NeuralNetwork({ visible }: { visible: boolean }) {
 
   return (
     <motion.div
-      ref={containerRef}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
       className="relative w-full max-w-4xl mx-auto aspect-[16/9]"
     >
-      <div
-        className="absolute inset-0 opacity-30 pointer-events-none transition-opacity duration-300"
-        style={{
-          background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(79, 140, 255, 0.15), transparent 50%)`,
-        }}
-      />
-
       <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
         {connections.map(([a, b], i) => (
           <motion.line
@@ -118,7 +107,7 @@ function NeuralNetwork({ visible }: { visible: boolean }) {
             top: `${app.y}%`,
             width: `${app.w}%`,
             height: `${app.h}%`,
-            background: "rgba(79, 140, 255, 0.08)",
+            background: "rgba(255, 255, 255, 0.03)",
           }}
           initial={{ opacity: 0, y: 20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -174,7 +163,6 @@ export default function HeroSection() {
   return (
     <section ref={sectionRef} className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute inset-0 gradient-mesh" />
       <div className="absolute inset-0 noise-bg" />
 
       <motion.div
