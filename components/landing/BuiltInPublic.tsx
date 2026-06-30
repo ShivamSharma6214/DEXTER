@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { FlaskConical, Telescope, ArrowUpRight, MessageSquare, Code, Lightbulb, Github } from "lucide-react";
 
-const githubRepoUrl = "https://github.com/sharmashivam6214-cmd/DEXTRA.git";
+const githubRepoUrl = "https://github.com/ShivamSharma6214/DEXTER.git";
 
 function MagneticCard({
   children,
@@ -57,7 +57,7 @@ const pillars = [
   {
     icon: FlaskConical,
     title: "Active Development",
-    description: "Built in real time. Features ship weekly. The codebase evolves openly as Dextra finds its shape.",
+    description: "Built in real time. Features ship weekly. The codebase evolves openly as Dexter finds its shape.",
   },
   {
     icon: Telescope,
@@ -119,7 +119,7 @@ export default function BuiltInPublic() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg text-white/40 max-w-2xl mx-auto"
           >
-            Dextra is under active development. Early users can influence its direction. The goal is to build the AI operating layer for every computer.
+            Dexter is under active development. Early users can influence its direction. The goal is to build the AI operating layer for every computer.
           </motion.p>
         </div>
 
@@ -150,7 +150,7 @@ export default function BuiltInPublic() {
         >
           <div className="inline-flex flex-col sm:flex-row items-center gap-4">
             <a
-              href="mailto:hello@dextra.ai"
+              href="mailto:hello@dexter.ai"
               className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/[0.02] text-white font-medium text-sm hover:bg-white/5 hover:border-white/20 transition-all duration-300"
             >
               <MessageSquare className="w-4 h-4" />

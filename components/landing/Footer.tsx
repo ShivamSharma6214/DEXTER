@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, Twitter, MessageCircle, Heart } from "lucide-react";
 
-const githubRepoUrl = "https://github.com/sharmashivam6214-cmd/DEXTRA.git";
+const githubRepoUrl = "https://github.com/sharmashivam6214-cmd/dexter.git";
 
 const footerLinks = {
   Product: [
@@ -15,12 +15,12 @@ const footerLinks = {
     { label: "Source Code", href: githubRepoUrl },
     { label: "Discord", href: "#" },
     { label: "Twitter", href: "#" },
-    { label: "Feedback", href: "mailto:hello@dextra.ai" },
+    { label: "Feedback", href: "mailto:hello@dexter.ai" },
   ],
   About: [
     { label: "Built in Public", href: "#built-in-public" },
     { label: "Blog", href: "#" },
-    { label: "Contact", href: "mailto:hello@dextra.ai" },
+    { label: "Contact", href: "mailto:hello@dexter.ai" },
   ],
   Legal: [
     { label: "Privacy", href: "#" },
@@ -40,17 +40,20 @@ export default function Footer() {
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <span className="inline-block w-2 h-2 rounded-full bg-[#4F8CFF]" />
-              <span className="text-xl font-semibold tracking-tight">Dextra</span>
+              <span className="text-xl font-semibold tracking-tight">
+                dexter
+              </span>
             </div>
             <p className="text-sm text-white/40 leading-relaxed max-w-xs mb-6">
-              An open-source AI desktop companion that understands your workflow.
+              An open-source AI desktop companion that understands your
+              workflow.
             </p>
             <div className="flex items-center gap-4">
               <a
                 href={githubRepoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Dextra GitHub repository"
+                aria-label="dexter GitHub repository"
                 className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-white hover:border-white/20 transition-all duration-300"
               >
                 <Github className="w-4 h-4" />
@@ -81,8 +84,14 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      target={link.href.startsWith("http") ? "_blank" : undefined}
-                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      target={
+                        link.href.startsWith("http") ? "_blank" : undefined
+                      }
+                      rel={
+                        link.href.startsWith("http")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
                       className="text-sm text-white/40 hover:text-white/80 transition-colors duration-300"
                     >
                       {link.label}
@@ -97,10 +106,12 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/30">
-            &copy; {new Date().getFullYear()} Dextra. Open source under MIT License.
+            &copy; {new Date().getFullYear()} dexter. Open source under MIT
+            License.
           </p>
           <p className="text-sm text-white/30 flex items-center gap-1">
-            Built with <Heart className="w-3 h-3 text-[#4F8CFF]" /> by the community
+            Built with <Heart className="w-3 h-3 text-[#4F8CFF]" /> by the
+            community
           </p>
         </div>
       </div>

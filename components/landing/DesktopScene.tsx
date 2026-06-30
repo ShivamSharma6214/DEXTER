@@ -108,7 +108,7 @@ export default function DesktopScene() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg text-white/40 max-w-2xl mx-auto"
           >
-            Dextra sits between your applications, understanding context across every window, and helping you work seamlessly.
+            Dexter sits between your applications, understanding context across every window, and helping you work seamlessly.
           </motion.p>
         </motion.div>
 
@@ -199,7 +199,7 @@ export default function DesktopScene() {
             );
           })}
 
-          {/* Central Dextra indicator */}
+          {/* Central Dexter indicator */}
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
             initial={{ scale: 0, opacity: 0 }}
@@ -230,7 +230,7 @@ export default function DesktopScene() {
           className="mt-16 text-center"
         >
           <p className="text-white/30 text-sm max-w-lg mx-auto">
-            Hover over any application window to see how Dextra connects intelligence across your entire desktop.
+            Hover over any application window to see how Dexter connects intelligence across your entire desktop.
           </p>
         </motion.div>
       </div>

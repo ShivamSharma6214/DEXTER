@@ -1,11 +1,23 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useMotionValue,
+} from "framer-motion";
 import TypingAnimation from "./TypingAnimation";
 import { ArrowRight, Play, Map } from "lucide-react";
 
-function MagneticButton({ children, className }: { children: React.ReactNode; className?: string }) {
+function MagneticButton({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -40,15 +52,44 @@ function MagneticButton({ children, className }: { children: React.ReactNode; cl
 
 function NeuralNetwork({ visible }: { visible: boolean }) {
   const nodes = [
-    { x: 15, y: 20 }, { x: 35, y: 15 }, { x: 65, y: 18 }, { x: 85, y: 25 },
-    { x: 20, y: 45 }, { x: 50, y: 40 }, { x: 80, y: 45 },
-    { x: 25, y: 65 }, { x: 55, y: 60 }, { x: 75, y: 68 },
-    { x: 30, y: 85 }, { x: 60, y: 80 }, { x: 85, y: 85 },
+    { x: 15, y: 20 },
+    { x: 35, y: 15 },
+    { x: 65, y: 18 },
+    { x: 85, y: 25 },
+    { x: 20, y: 45 },
+    { x: 50, y: 40 },
+    { x: 80, y: 45 },
+    { x: 25, y: 65 },
+    { x: 55, y: 60 },
+    { x: 75, y: 68 },
+    { x: 30, y: 85 },
+    { x: 60, y: 80 },
+    { x: 85, y: 85 },
   ];
 
   const connections = [
-    [0,1],[0,4],[1,2],[1,5],[2,3],[2,5],[3,6],[4,5],[4,7],[5,6],[5,8],[5,9],
-    [6,9],[7,8],[7,10],[8,9],[8,11],[9,12],[10,11],[11,12],[6,11],[7,10],
+    [0, 1],
+    [0, 4],
+    [1, 2],
+    [1, 5],
+    [2, 3],
+    [2, 5],
+    [3, 6],
+    [4, 5],
+    [4, 7],
+    [5, 6],
+    [5, 8],
+    [5, 9],
+    [6, 9],
+    [7, 8],
+    [7, 10],
+    [8, 9],
+    [8, 11],
+    [9, 12],
+    [10, 11],
+    [11, 12],
+    [6, 11],
+    [7, 10],
   ];
 
   if (!visible) return null;
@@ -60,12 +101,18 @@ function NeuralNetwork({ visible }: { visible: boolean }) {
       transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
       className="relative w-full max-w-4xl mx-auto aspect-[16/9]"
     >
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <svg
+        className="absolute inset-0 w-full h-full"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
         {connections.map(([a, b], i) => (
           <motion.line
             key={i}
-            x1={nodes[a].x} y1={nodes[a].y}
-            x2={nodes[b].x} y2={nodes[b].y}
+            x1={nodes[a].x}
+            y1={nodes[a].y}
+            x2={nodes[b].x}
+            y2={nodes[b].y}
             stroke="rgba(79, 140, 255, 0.3)"
             strokeWidth="0.2"
             initial={{ pathLength: 0, opacity: 0 }}
@@ -82,9 +129,18 @@ function NeuralNetwork({ visible }: { visible: boolean }) {
             fill="#4F8CFF"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3 + i * 0.1,
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
-            <animate attributeName="opacity" values="0.6;1;0.6" dur={`${2 + i * 0.2}s`} repeatCount="indefinite" />
+            <animate
+              attributeName="opacity"
+              values="0.6;1;0.6"
+              dur={`${2 + i * 0.2}s`}
+              repeatCount="indefinite"
+            />
           </motion.circle>
         ))}
       </svg>
@@ -161,7 +217,10 @@ export default function HeroSection() {
   const y = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+    >
       <div className="absolute inset-0 bg-[#050505]" />
       <div className="absolute inset-0 noise-bg" />
 
@@ -200,11 +259,14 @@ export default function HeroSection() {
                 <span className="text-[#4F8CFF]">Every Application.</span>
               </h1>
               <p className="text-base sm:text-lg text-white/50 max-w-xl mx-auto leading-relaxed">
-                Dextra is an AI desktop companion that works across your entire computer — not inside a single app.
+                dexter is an AI desktop companion that works across your entire
+                computer — not inside a single app.
               </p>
               <div className="mt-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#4F8CFF]/20 bg-[#4F8CFF]/5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#4F8CFF] animate-pulse" />
-                <span className="text-xs text-[#4F8CFF]/80 font-medium tracking-wide">Early Alpha</span>
+                <span className="text-xs text-[#4F8CFF]/80 font-medium tracking-wide">
+                  Early Alpha
+                </span>
               </div>
             </motion.div>
 
@@ -229,7 +291,10 @@ export default function HeroSection() {
               </MagneticButton>
 
               <MagneticButton>
-                <a href="#roadmap" className="flex items-center gap-2 px-8 py-4 rounded-xl border border-white/10 text-white font-medium text-sm hover:bg-white/5 hover:border-white/20 transition-all duration-300">
+                <a
+                  href="#roadmap"
+                  className="flex items-center gap-2 px-8 py-4 rounded-xl border border-white/10 text-white font-medium text-sm hover:bg-white/5 hover:border-white/20 transition-all duration-300"
+                >
                   <Map className="w-4 h-4" />
                   View Roadmap
                 </a>

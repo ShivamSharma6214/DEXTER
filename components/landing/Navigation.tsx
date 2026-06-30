@@ -33,7 +33,7 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#" className="text-xl font-semibold tracking-tight flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-[#4F8CFF]" />
-            Dextra
+            Dexter
           </a>
 
           <div className="hidden md:flex items-center gap-8">

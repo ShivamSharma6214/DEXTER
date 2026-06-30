@@ -18,7 +18,7 @@ const features = [
   {
     icon: Mic,
     title: "Voice Understanding",
-    description: "Speak naturally. Dextra understands context, intent, and nuance in your voice commands.",
+    description: "Speak naturally. Dexter understands context, intent, and nuance in your voice commands.",
     size: "large",
     color: "#4F8CFF",
   },
@@ -74,7 +74,7 @@ const features = [
   {
     icon: MessageCircle,
     title: "Natural Conversations",
-    description: "No rigid commands. Talk to Dextra like you would to a colleague. Ask, delegate, and collaborate.",
+    description: "No rigid commands. Talk to Dexter like you would to a colleague. Ask, delegate, and collaborate.",
     size: "medium",
     color: "#4F8CFF",
   },
